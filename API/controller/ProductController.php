@@ -4,9 +4,9 @@ namespace API\Controller;
 
 use API\database\Database;
 use API\model\Product;
-use API\Model\DVD;
-use API\Model\Book;
-use API\Model\Furniture;
+use API\model\DVD;
+use API\model\Book;
+use API\model\Furniture;
 require_once __DIR__ . '/../database/Database.php';
 require_once __DIR__ . '/../model/Product.php';
 require_once __DIR__ . '/../model/DVD.php';
