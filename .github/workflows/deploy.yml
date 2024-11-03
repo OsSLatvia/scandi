@@ -7,6 +7,7 @@ on:
     paths:
       - 'API/**'  # This will trigger the PHP deployment job
       - 'src/**'   # This will trigger the React app deployment job
+      - '!Database.php' #Excude databse file that has database conection information
 
 jobs:
   deploy-php:
@@ -37,7 +38,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./API/"  # Local directory for PHP files
           server-dir: "${{ secrets.FTP_PATH }}/API/"  # Target directory on the FTP server
-          exclude: "**/node_modules/**, **/.git/**"  # Exclude unnecessary files
+          exclude: "**/node_modules/**, **/.git/**, **/Database.php"  # Exclude unnecessary files
 
   deploy-react:
     runs-on: ubuntu-latest
@@ -83,4 +84,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./src/build/"  # Local directory for React build files
           server-dir: "${{ secrets.FTP_PATH }}"  # Target directory on the FTP server
-          exclude: "**/node_modules/**, **/.git/**"  # Exclude unnecessary files
+          exclude: "**/node_modules/**, **/.git/**, **/Database.php"  # Exclude unnecessary files
