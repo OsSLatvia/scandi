@@ -35,8 +35,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "./API"  # Local directory for PHP files
-          server-dir: "${{ secrets.FTP_PATH }}"  # Target directory on the FTP server
+          local-dir: "./API/"  # Local directory for PHP files
+          server-dir: "${{ secrets.FTP_PATH }}/API/"  # Target directory on the FTP server
           exclude: "**/node_modules/**, **/.git/**"  # Exclude unnecessary files
 
   deploy-react:
@@ -44,6 +44,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+            fetch-depth: 2
 
       - name: Check for changes in src/
         id: check_src_changes
@@ -79,6 +81,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "./src/build"  # Local directory for React build files
+          local-dir: "./src/build/"  # Local directory for React build files
           server-dir: "${{ secrets.FTP_PATH }}"  # Target directory on the FTP server
           exclude: "**/node_modules/**, **/.git/**"  # Exclude unnecessary files
