@@ -37,7 +37,7 @@ class DVD extends Product {
         try {
             // Execute the statement
             $stmt->execute();
-            echo "test workflow: DVD added successfully";
+            echo "test workflow 2: DVD added successfully";
         } catch (\Exception $e) {
             // Handle specific errors if needed
             if ($e->getCode() == DUPLICATE_KEY_ERROR_CODE) {
