@@ -3,7 +3,7 @@ name: Deploy Workflow
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'API/**'  # This will trigger the PHP deployment job
       - 'src/**'   # This will trigger the React app deployment job
