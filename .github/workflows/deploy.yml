@@ -84,6 +84,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "./src/build/"  # Local directory for React build files
+          local-dir: "./build/"  # Local directory for React build files
           server-dir: "${{ secrets.FTP_PATH }}/"  # Target directory on the FTP server
           exclude: "**/node_modules/**, **/.git/**, **/Database.php"  # Exclude unnecessary files
