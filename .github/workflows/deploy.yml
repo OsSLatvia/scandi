@@ -72,9 +72,10 @@ jobs:
 
       - name: Build the React app
         if: env.changes == 'true'  # Run this step only if there are changes in src/
-        run: npm run build
-        working-directory: ./src  # Specify the directory where your package.json is located
-
+        run: |
+            CI=false npm run build
+            working-directory: ./src  # Specify the directory where your package.json is located
+            
       - name: Deploy React app via FTP
         if: env.changes == 'true'  # Run this step only if there are changes in src/
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
