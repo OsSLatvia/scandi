@@ -63,7 +63,7 @@ jobs:
         if: env.changes == 'true'  # Run this step only if there are changes in src/
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Specify your Node.js version
+          node-version: '20'  # Specify your Node.js version
 
       - name: Install dependencies
         if: env.changes == 'true'  # Run this step only if there are changes in src/
