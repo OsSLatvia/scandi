@@ -24,7 +24,7 @@ function AddProduct() {
   });
 
   const [validationError, setValidationError] = useState({
-    sku: 'testing workflow 2: build and deploy. Please, submit required data',
+    sku: 'testing workflow 3: build and deploy. Please, submit required data',
     name: 'Please, submit required data',
     price: 'Please, submit required data',
     size: 'Please, submit required data',
